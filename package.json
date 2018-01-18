@@ -1,0 +1,52 @@
+{
+  "name": "autopv",
+  "version": "1.0.0",
+  "description": "自动化埋点",
+  "main": "index.js",
+  "scripts": {
+    "local": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pastry-2841/autoPV.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pastry-2841/autoPV/issues"
+  },
+  "homepage": "https://github.com/pastry-2841/autoPV#readme",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "7.1.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-import": "^1.4.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "6.5.0",
+    "css-loader": "^0.28.9",
+    "happypack": "^4.0.0",
+    "jsx-loader": "^0.13.2",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "dva": "^2.1.0",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^2.30.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack-merge": "^4.1.1"
+  }
+}
