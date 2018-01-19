@@ -3,9 +3,6 @@ import { connect } from 'dva'
 
 class Location extends React.Component {
   componentDidMount() {
-    this.props.dispatch({
-      type: 'users/goDashboard'
-    })
   }
   render() {
     return (
@@ -17,8 +14,6 @@ class Location extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    serverConfigList: state.task.serverConfigList,
-    logConfigList: state.task.logConfigList,
   }
 }
 export default connect(mapStateToProps)(Location)
