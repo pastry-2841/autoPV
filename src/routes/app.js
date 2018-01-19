@@ -3,6 +3,8 @@ import { connect } from 'dva'
 import { Route, Link, Switch } from 'dva/router'
 import './app.less'
 
+import Canvas from 'components/Canvas'
+
 class App extends React.Component {
   componentDidMount () {
   }
@@ -21,6 +23,7 @@ class App extends React.Component {
             </ul>
           </div>
           <div className='working'>
+            <Canvas width='400' height='400' data={window.testData} />
           </div>
         </div>
       </div>
