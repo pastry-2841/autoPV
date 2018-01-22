@@ -46,6 +46,7 @@ class App extends React.Component {
     })
   }
   onSelectTarget(node, index) {
+    console.log('---')
     this.setState({
       selectedTarget: node
     })
@@ -54,6 +55,7 @@ class App extends React.Component {
     const { match, location } = this.props
     const { targets, selectedTarget } = this.state
     const { pathname } = location
+    console.log(selectedTarget)
     return (
       <div className='layout'>
         <div className='header'></div>
@@ -69,6 +71,22 @@ class App extends React.Component {
           </div>
           <div className='working'>
             <Canvas width='400' height='400' data={this.state.data} selectedTarget={selectedTarget} />
+          </div>
+          <div className='info'>
+            <ul>
+              {
+                selectedTarget && Object.keys(selectedTarget).map((key, index) => {
+                  if (typeof selectedTarget[key] !== 'object') {
+                    return (
+                      <li key={index} className='info-row'>
+                        <span>{key}: </span>
+                        <span>{selectedTarget[key].toString()}</span>
+                      </li>
+                    )
+                  }
+                })
+              }
+            </ul>
           </div>
         </div>
       </div>
