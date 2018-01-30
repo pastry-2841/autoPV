@@ -71,7 +71,6 @@ class App extends React.Component {
     ctx.strokeStyle = '#1890ff'
     ctx.strokeRect(x, y, width, height)
     ctx.restore()
-    console.log(node)
   }
   render() {
     const { width, height } = this.props

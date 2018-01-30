@@ -10,9 +10,6 @@ module.exports = merge(common, {
     hot: true,
     historyApiFallback: true,
     proxy: {
-      '/monitor': {
-        target: 'http://10.45.136.147:8080/',
-      },
       // '/monitor': {
       //   target: 'http://10.7.0.15:8220/',
       // },

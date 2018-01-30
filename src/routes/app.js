@@ -46,7 +46,6 @@ class App extends React.Component {
     })
   }
   onSelectTarget(node, index) {
-    console.log('---')
     this.setState({
       selectedTarget: node
     })
@@ -55,7 +54,6 @@ class App extends React.Component {
     const { match, location } = this.props
     const { targets, selectedTarget } = this.state
     const { pathname } = location
-    console.log(selectedTarget)
     return (
       <div className='layout'>
         <div className='header'></div>
