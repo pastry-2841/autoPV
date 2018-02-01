@@ -4,6 +4,7 @@ import services from '../services/userServices'
 export default {
   namespace: 'users',
   state: {
+    list: []
   },
 
   reducers: {
@@ -14,6 +15,16 @@ export default {
 
   effects: {
     ...action,
+    *getData({ payload }, { call, put }) {
+      const list = yield call(services.get_node_list)
+      console.log(list)
+      yield put({
+        type: 'save',
+        payload: {
+          list
+        }
+      })
+    },
   },
 
   subscriptions: {

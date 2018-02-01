@@ -1,16 +1,18 @@
 import fetch from 'dva/fetch'
 
+const host = '//localhost:3001'
+
 export default {
   async get(url, options = '') {
     // const data = JSON.stringify(options)
-    return request(`/monitor/${url}/${options}`)
+    return request(`${host}/api/${url}/${options}`)
   },
   async post(url, options = {}) {
     const data = JSON.stringify(options)
-    return request(`/monitor/${url}`, { method: 'POST', body: data})
+    return request(`${host}/api/${url}`, { method: 'POST', body: data })
   },
   async del(url) {
-    return request(`/monitor/${url}`, { method: 'DELETE'})
+    return request(`${host}/api/${url}`, { method: 'DELETE' })
   }
 }
 
@@ -18,6 +20,7 @@ function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response
   } else if (response.status >= 500) {
+    message.error('服务器异常', 2)
   }
   const error = new Error(response.statusText)
   error.response = response
@@ -37,7 +40,7 @@ async function request(url, options = {}) {
     'Content-Type': 'application/json'
   }
   const response = await fetch(encodeURI(url), { headers, ...options })
-  
+
   let data
   try {
     checkStatus(response)

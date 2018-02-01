@@ -14,6 +14,9 @@ class App extends React.Component {
       selectedTarget: undefined
     }
   }
+  componentWillMount() {
+    this.props.dispatch({ type: 'users/getData' })
+  }
   componentDidMount () {
     const { data } = this.state
 
@@ -51,6 +54,7 @@ class App extends React.Component {
     })
   }
   render () {
+    console.log(this.props)
     const { match, location } = this.props
     const { targets, selectedTarget } = this.state
     const { pathname } = location
@@ -92,8 +96,9 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps ({ users }) {
   return {
+    list: users.list
   }
 }
 export default connect(mapStateToProps)(App)
